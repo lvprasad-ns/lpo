@@ -1,5 +1,26 @@
 apply plugin: 'com.android.library'
 
+ext {
+    // Where you will see your artifact in Bintray's web interface
+    // The "bintrayName" should match the name of the Bintray repro.
+    bintrayRepo = 'maven'
+    bintrayName = 'lpo'
+
+    // Maven metadata
+    publishedGroupId = 'com.example.prasadtumma.lpo'
+    libraryName = 'lpo'
+    // Save yourself a head ache, and set this equal to the name of the Android Studio library
+    // module. The artifact name needs to match the name of the library.
+    artifact = 'lpo'
+
+    libraryDescription = 'A custom Libaray for test'
+    libraryVersion = '0.3.1'
+
+    developerId = 'lvprasad'
+    developerName = 'lvprasad tumma'
+    developerEmail = 'lvprasad.neurospeech@gmail.com'
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -23,3 +44,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
+
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/bintrayv1.gradle'
